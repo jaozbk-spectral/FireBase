@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Formulario de Cadastro</h1>
+    <div class="formulario"></div>
+    <Fieldset>
+        <legend>Cadastro para banco de Dados</legend>
+        <class class="forms">
+            <form action="" method="post">
+                Nome: <br><input type="text" placeholder="Joao" name="Name" maxlength="100" minlength="10"><br>
+                Cpf: <br><input type="text" placeholder="102.402.509.11" name="cpf" maxlength="100" minlength="10"><br>
+                Idade:<br><input type="number" placeholder="28" name="Idade" maxlength="100" minlength="10"><br>
+                Cep: <br><input type="text" placeholder="254.543-000" name="Cep" maxlength="100" minlength="10"><br>
+                Telefone:<br><input type="text" placeholder="41 99557-7696" name="Telefone" maxlength="100"
+                    minlength="10"><br>
+                Email:<br><input type="email" placeholder="12345@gmail.com" name="Email" maxlength="100"
+                    minlength="10"><br>
+                Senha:<br><input type="text" placeholder="2924" name="Senha" maxlength="100" minlength="10"><br>
+                <input type="submit" name="Enviar">
+                </div>
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+                    import {
+                        getFirestore,
+                        collection,
+                        addDoc
+                    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+                    import { initializeApp } from "firebase/app";
+
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyBRQDcTo--nh1Yfqzro4cZ0NbHFwEkuABk",
+                        authDomain: "joaobatista3a-ffc87.firebaseapp.com",
+                        projectId: "joaobatista3a-ffc87",
+                        storageBucket: "joaobatista3a-ffc87.firebasestorage.app",
+                        messagingSenderId: "125349409107",
+                        appId: "1:125349409107:web:faaf3eec5de1c226a1b1a6"
+                    }
+
+                    const app = initializeApp(firebaseConfig);
+                    const db = getFirestore(app);
+
+                    const form = document.getElementById("formUsuario");
+                    const mensagem = document.getElementById("mensagem");
+
+                    form.addEventListener("submit", async (e) => {
+                        e.preventDefault();
+
+                        const cpf = document.getElementById("cpf").value;
+                        const nome = document.getElementById("nome").value;
+                        const email = document.getElementById("email").value;
+                        const telefone = document.getElementById("telefone").value;
+                        const senha = document.getElementById("senha").value;
+                        const cep = document.getElementById("cep").value;
+                        const idade = document.getElementById("idade").value;
+
+
+                        try {
+                            await addDoc(collection(db, "usuarios"), {
+                                cpf,
+                                nome,
+                                email,
+                                telefone,
+                                senha,
+                                cep,
+                                idade,
+                            });
+
+                            mensagem.textContent = "Usuário salvo com sucesso.";
+                            mensagem.style.color = "green";
+                            form.reset();
+                        } catch (error) {
+                            mensagem.textContent = "Erro ao salvar: " + error.message;
+                            mensagem.style.color = "red";
+                        }
+                    });
+                </script>
+        </class>
+    </Fieldset>
+    </form>
+</body>
+
+</html>

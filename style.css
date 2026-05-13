@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(118, 169, 214);
+    color: rgb(65, 71, 80);
+
+    text-align: center;
+}
+
+fieldset {
+    width: 300px;
+    margin-left: 595px;
+}S
+
+    .formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
