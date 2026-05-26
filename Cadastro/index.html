@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=s, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-color: rgb(228, 190, 143);
-            color: black;
+        body {
+            background-color: rgb(184, 159, 101);
+            color: black
         }
-        
-      
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #conteiner_inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #bloco_a {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        #bloco_b {
+            display: flex;
+            gap: 10px;
+        }
+
+        #bloco_b1 {
+            flex-direction: column;
+        }
+
+        #bloco_b2 {
+            flex-direction: column;
+        }
+
+        input {
+            row-gap: 10px;
+        }
     </style>
+    <script>
+    </script>
 </head>
+
 <body>
     <main>
+
         <form action="">
-        <fieldset>
-            <legend>Cadastro</legend>
-            
-            
-         CEP: <input type="text" id="Cep" minlength="12" placeholder="80525-000"><br>
+            <fieldset>
+                <legend>Cadastro</legend>
+                <div id="conteiner_inputs">
+                    <div id="bloco_a">
+                        CEP: <input type="text" minlength="12" placeholder="80525-000"><br> Endereço: <input type="text"
+                            minlength="150" placeholder="rua baroxoque 259, cidadao pele"><br>
+                        Complemento: <input type="text" minlength="350" placeholder="bloco de endereço cidadania"><br>
+                    </div>
 
-         Endereço: <input type="text" id="endereço" minlength="150" placeholder="rua baroxoque 259, cidadao pele"><br>
+                    <div id="bloco_b">
+                        <div id="bloco_b1">
+                            Cidade: <input type="text" minlength="350" placeholder="bloco de endereço cidadania">
+                            <br>
+                            Telefone 1: <input type="tel" minlength="14" placeholder="+55 41 9557-7696"> <br>
+                            Telefone
+                            2: <input type="tel" minlength="14" placeholder="+55 41 9545-7696"> <br> Celular: <input
+                                type="tel" minlength="14" placeholder="+55 41 99557-7696"> <br> Fax: <input type="tel"
+                                minlength="14" placeholder="+55 41 7745-7696"><br>
+                        </div>
+                        <div id="bloco_b2">
+                            <button id="lupa">lupa</button><button id="borracha">apagar</button><br> Complemento:
+                            <input type="text" minlength="150"><br> Complemento: <input type="text" minlength="150"><br>
+                            Complemento: <input type="text" minlength="150"><br> Complemento: <input type="text"
+                                minlength="150"><br>
+                        </div>
+                    </div>
+                </div>
 
-         Complemento: <input type="text" minlength="350" id="Complemento" placeholder="bloco de endereço cidadania"><br>
-
-         Cidade: <input type="text" minlength="350" id="cidade" placeholder="bloco de endereço cidadania">
-          <button id="lupa">lupa</button><button id="borracha">apagar</button><br>
-
-         Telefone 1: <input type="tel" minlength="14" id="telef1" placeholder="+55 41 9557-7696">
-          Complemento: <input id="com1" type="text" minlength="150"><br>
-         Telefone 2: <input type="tel" minlength="14"id="telef2" placeholder="+55 41 9545-7696">
-           Complemento: <input id="com2" type="text" minlength="150"><br>
-         Celular: <input type="tel" minlength="14" id="Celular" placeholder="+55 41 99557-7696">
-           Complemento: <input id="com3" type="text" minlength="150"><br>
-         Fax: <input type="tel" minlength="14" id="Fax" placeholder="+55 41 7745-7696">
-         ]    Complemento: <input id="com4" type="text" minlength="150"><br>
-         </form>
+        </form>
         </fieldset>
     </main>
 </body>
+
 </html>
