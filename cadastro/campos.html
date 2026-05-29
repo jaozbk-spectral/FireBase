@@ -1,27 +1,42 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background-color: rgb(118, 169, 214);
+        color: rgb(65, 71, 80);
+
+        text-align: center;
+    }
+
+    fieldset {
+        width: 300px;
+        margin-left: 790px;
+    }
+</style>
+
 <body>
-    <fieldset>
-        <legend>TIPOS DE CAMPOS DE TEXTO</legend>
-        <form id="formulario">
-            <p>Tipo Texto</p><input type="text" placeholder="Aceita tudo"><br>
-            <p>Tipo Numero</p><input type="number" placeholder="Aceita apenas numeros"><br>
-            <p>Tipo Arquivos</p><input type="file"><br>
-            <p>Area de texto</p><textarea></textarea><br>
-            <p>Datas</p><input type="date"><br>
-            <p>Seleções</p><input type="radio"><br>
-            <p>Seleções</p><input type="checkbox"><br>
-            <p>Seleções</p><select>
-                                <option>Opção 1</option>
-                                <option>Opção 2</option>
-                            </select>                
-            <input type="submit" value="Cadastrar">
-        </form>
-    </fieldset>
+    <h1>Formulario de Cadastro</h1>
+    <Fieldset>
+        <legend>Cadastro para banco de Dados</legend>
+        <class class="forms">
+            <form action="" method="post">
+                Nome: <br> <input type="text" placeholder="Joao" name="Name"><br>
+                Cpf: <br> <input type="text" placeholder="102.402.509.11" name="cpf"><br>
+                Idade: <br> <input type="number" placeholder="28" name="Idade"><br>
+                Cep: <br> <input type="text" placeholder="254.543-000" name="Cep"><br>
+                Telefome: <br> <input type="text" placeholder="41 99557-7696" name="Telefone"><br>
+                Email: <br> <input type="email" placeholder="12345@gmail.com" name="Email"><br>
+                Senha: <br> <input type="text" placeholder="2924" name="Senha"><br>
+                <input type="submit" name="Enviar">
+        </class>
+    </Fieldset>
+    </form>
 </body>
+
 </html>
