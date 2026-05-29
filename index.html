@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <title>FIREBASE</title>
+    <style>
+        body {
+            background-color: rgb(122, 154, 97);
+            color: rgb(0, 0, 0);
+        }
+
+        input {
+
+            border-radius: 30px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            padding: 1.5px 0 0;
+        }
+
+        #bloco_texto {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        #conteiner_inputs2 {
+            display: flex;
+        }
+
+        #conteiner_inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #bloco_a {
+            flex-direction: column;
+        }
+
+        #bloco_b {
+            display: flex;
+        }
+
+        #bloco_b1 {
+            flex-direction: column;
+        }
+
+        #bloco_b2 {
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 60px 0 0;
+        }
+    </style>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import {
@@ -32,23 +84,36 @@
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const cpf = document.getElementById("cpf").value;
-            const nome = document.getElementById("nome").value;
-            const email = document.getElementById("email").value;
-            const telefone = document.getElementById("telefone").value;
-            const senha = document.getElementById("senha").value;
-            const cep = document.getElementById("cep").value;
-            const idade = document.getElementById("idade").value;
+            const CEP = document.getElementById("CEP").value;
+            const ENDERECO = document.getElementById("ENDERECO").value;
+            const COMPLEMENTO = document.getElementById("COMPLEMENTO").value;
+            const CIDADE = document.getElementById("CIDADE").value;
+            const TEL1 = document.getElementById("TEL1").value;
+            const TEL2 = document.getElementById("TEL2").value;
+            const CELULAR = document.getElementById("CELULAR").value;
+            const FAX = document.getElementById("FAX").value;
+            const BAIRRO = document.getElementById("BAIRRO").value;
+            const COMPLE1 = document.getElementById("COMPLE1").value;
+            const COMPLE2 = document.getElementById("COMPLE2").value;
+            const COMPLE3 = document.getElementById("COMPLE3").value;
+            const COMPLE4 = document.getElementById("COMPLE4").value;
+
 
             try {
-                await addDoc(collection(db, "usuarios"), {
-                    cpf,
-                    nome,
-                    email,
-                    telefone,
-                    senha,
-                    cep,
-                    idade
+                await addDoc(collection(db, "Endereco"), {
+                    CEP,
+                    ENDERECO,
+                    COMPLEMENTO,
+                    CIDADE,
+                    TEL1,
+                    TEL2,
+                    CELULAR,
+                    FAX,
+                    BAIRRO,
+                    COMPLE1,
+                    COMPLE2,
+                    COMPLE3,
+                    COMPLE4
                 });
 
                 mensagem.textContent = "Usuário salvo com sucesso.";
@@ -63,25 +128,56 @@
 </head>
 
 <body>
-    <form id="formulario">
-        <fieldset>
-            <legend>Cadastro do Firebase</legend>
-            <p>NOME:</p><input type="text" id="nome" class="campo" placeholder="Digite o seu nome" maxlength="100"
-                minlength="5" required><br>
-            <p>IDADE</p><input type="text" id="idade" class="campo" placeholder="Digite sua idade" maxlength="2"
-                minlength="1" required><br>
-            <p>EMAIL:</p><input type="text" id="email" class="campo" placeholder="Digite seu email" maxlength="50"
-                minlength="10" required><br>
-            <p>CPF:</p><input type="text" id="cpf" class="campo" placeholder="Digite seu cpf" maxlength="11"
-                minlength="11" required><br>
-            <p>SENHA:</p><input type="text" id="senha" class="campo" placeholder="Digite sua senha" maxlength="10"
-                minlength="5" required><br>
-            <p>TELEFONE:</p><input type="text" id="telefone" class="campo" placeholder="Digite seu telefone"
-                maxlength="11" minlength="11" required><br>
-            <p>CEP:</p><input type="text" id="cep" class="campo" placeholder="Digite seu cep" maxlength="12"
-                minlength="10" required><br><br>
-            <input type="submit" value="Cadastrar">
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Cadastro</legend>
+                <div class="final">
+                    <div id="conteiner_inputs">
+                        <div id="conteiner_inputs2">
+                            <div id="bloco_texto">
+                                <p>CEP: </p>
+                                <p>Endereço: </p>
+                                <p>Complemento: </p>
+                                <p>Cidade: </p>
+                                <p>Telefone1: </p>
+                                <p>Telefone2: </p>
+                                <p>Celular:</p>
+                                <p>Fax: </p>
+                            </div>
+                            <div id="bloco_a">
+
+                                <input type="text" minlength="12" placeholder="80525-000" id="CEP"><br>
+                                <input type="text" daminlength="150" placeholder="rua baroxoque 259, cidadao pele" id="ENDERECO"><br>
+                                <input type="text" minlength="350" placeholder="bloco de endereço cidadania" id="COMPLEMENTO"> <br>
+                                <input type="text" minlength="350" placeholder="bloco de endereço cidadania" id="CIDADE"> <br>
+
+                                <input type="tel" minlength="14" placeholder="+55 41 9557-7696" id="TEL1"> <br>
+                                <input type="tel" minlength="14" placeholder="+55 41 9545-7696" id="TEL2"> <br>
+                                <input type="tel" minlength="14" placeholder="+55 41 99557-7696" id="CELULAR"> <br>
+                                <input type="tel" minlength="14" placeholder="+55 41 7745-7696" id="FAX"><br>
+                                <input type="submit" name="tesao" id="submit" value="sim">
+                            </div>
+
+                            <div id="bloco_b">
+                                <div id="bloco_b1">
+
+                                </div>
+                                <div id="bloco_b2">
+                                    Bairro:<input type="text" minlength="350" placeholder="bloco de endereço cidadania" id="BAIRRO">
+                                    <button id="lupa">lupa</button><button id="borracha">apagar</button><br>
+                                    Complemento: <input type="text" minlength="150" id="COMPLE1"><br>
+                                    Complemento: <input type="text" minlength="150" id="COMPLE2"><br>
+                                    Complemento: <input type="text" minlength="150" id="COMPLE3"><br>
+                                    Complemento: <input type="text" minlength="150" id="COMPLE4"><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
         </fieldset>
-    </form>
+    </main>
 </body>
-<html>
+
+</html
